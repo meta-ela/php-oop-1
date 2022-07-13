@@ -1,6 +1,40 @@
 <?php
 
 require "classi.php";
+
+$movie1 = new Movie("Jeremy Renner", "Amy Adams");
+$movie1->title = "Arrival";
+$movie1->author = "Denis Villeneuve";
+$movie1->year = 2016;
+$movie1->genre = "Fantascienza, Drammatico";
+
+$movie2 = new Movie("Matthew Goode", "Mia Wasikowska");
+$movie2->title = "Stoker";
+$movie2->author = "Park Chan-wook";
+$movie2->year = 2013;
+$movie2->genre = "Thriller, Drammatico";
+
+$movie3 = new Movie("Jake Gyllenhaal", "Jena Malone");
+$movie3->title = "Donnie Darko";
+$movie3->author = "Richard Kelly";
+$movie3->year = 2001;
+$movie3->genre = "Fantascienza, Thriller, Drammatico";
+
+$movie4 = new Movie("Timothée Chalamet", "Rebecca Ferguson");
+$movie4->title = "Dune";
+$movie4->author = "Denis Villeneuve";
+$movie4->year = 2021;
+$movie4->genre = "Fantascienza, Avventura, Drammatico";
+
+/* $movie1->printSampleCard(); */
+
+/* var_dump($movie1);
+var_dump($movie2); */
+
+/* echo "il film in lista da vedere è " . $movie1->title . ", prodotto nel " . $movie1->year . " e diretto da " . $movie1->author;
+echo "<br>";
+echo "il film in lista da vedere è " . $movie2->title . ", prodotto nel " . $movie2->year . " e diretto da " . $movie2->author;
+ */
 ?>
 
 <!DOCTYPE html>
@@ -34,8 +68,7 @@ require "classi.php";
                             <ul class="list-unstyled">
                                 <li>Uscito da ormai <?php echo $movie1->getGapYear() ?> anni</li>
                                 <li>Genere: <?php echo $movie1->genre ?></li>
-                                <li>Attore protagonista: <?php echo $movie1->maleProt ?></li>
-                                <li>Attrice protagonista: <?php echo $movie1->femaleProt ?></li>
+                                <li>Attori Protagonisti: <?php echo $movie1->getFullCast() ?></li>
                             </ul>
                         </div>
                     </div>
@@ -56,8 +89,7 @@ require "classi.php";
                             <ul class="list-unstyled">
                                 <li>Uscito da ormai <?php echo $movie2->getGapYear() ?> anni</li>
                                 <li>Genere: <?php echo $movie2->genre ?></li>
-                                <li>Attore protagonista: <?php echo $movie2->maleProt ?></li>
-                                <li>Attrice protagonista: <?php echo $movie2->femaleProt ?></li>
+                                <li>Attori Protagonisti: <?php echo $movie2->getFullCast() ?></li>
                             </ul>
                         </div>
                     </div>
@@ -78,9 +110,7 @@ require "classi.php";
                             <ul class="list-unstyled">
                                 <li>Uscito da ormai <?php echo $movie3->getGapYear() ?> anni</li>
                                 <li>Genere: <?php echo $movie3->genre ?></li>
-                                <li>Attore protagonista: <?php echo $movie3->maleProt ?></li>
-                                <li>Attrice protagonista: <?php echo $movie3->femaleProt ?></li>
-                            </ul>
+                                <li>Attori Protagonisti: <?php echo $movie3->getFullCast() ?></li>                            </ul>
                         </div>
                     </div>
                     <?php ?>
@@ -100,9 +130,7 @@ require "classi.php";
                             <ul class="list-unstyled">
                                 <li>Uscito da ormai <?php echo $movie4->getGapYear() ?> anni</li>
                                 <li>Genere: <?php echo $movie4->genre ?></li>
-                                <li>Attore protagonista: <?php echo $movie4->maleProt ?></li>
-                                <li>Attrice protagonista: <?php echo $movie4->femaleProt ?></li>
-                            </ul>
+                                <li>Attori Protagonisti: <?php echo $movie4->getFullCast() ?></li>                            </ul>
                         </div>
                     </div>
                     <?php ?>
