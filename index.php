@@ -5,28 +5,48 @@ class Movie
     public $title;
     public $author;
     public $year;
+    public $genre;
+    public $maleProt;
+    public $femaleProt;
 
-    public function getGapYear()
-    {
+    function __construct($_maleProt, $_femaleProt) {
+        $this->maleProt = $_maleProt;
+        $this->femaleProt = $_femaleProt;
+    }
+
+    public function getGapYear() {
         $currYear = date("Y");
         return $currYear - $this->year;
     }
+
 };
 
-$movie1 = new Movie();
+$movie1 = new Movie("Jeremy Renner", "Amy Adams");
 $movie1->title = "Arrival";
 $movie1->author = "Denis Villeneuve";
 $movie1->year = 2016;
+$movie1->genre = "Fantascienza, Drammatico";
 
-
-
-$movie2 = new Movie();
+$movie2 = new Movie("Matthew Goode", "Mia Wasikowska");
 $movie2->title = "Stoker";
 $movie2->author = "Park Chan-wook";
 $movie2->year = 2013;
+$movie2->genre = "Thriller, Drammatico";
 
-var_dump($movie1);
-var_dump($movie2);
+$movie3 = new Movie("Jake Gyllenhaal", "Jena Malone");
+$movie3->title = "Donnie Darko";
+$movie3->author = "Richard Kelly";
+$movie3->year = 2001;
+$movie3->genre = "Fantascienza, Thriller, Drammatico";
+
+$movie4 = new Movie("Timothée Chalamet", "Rebecca Ferguson");
+$movie4->title = "Dune";
+$movie4->author = "Denis Villeneuve";
+$movie4->year = 2021;
+$movie4->genre = "Fantascienza, Avventura, Drammatico";
+
+/* var_dump($movie1);
+var_dump($movie2); */
 
 /* echo "il film in lista da vedere è " . $movie1->title . ", prodotto nel " . $movie1->year . " e diretto da " . $movie1->author;
 echo "<br>";
@@ -49,8 +69,8 @@ echo "il film in lista da vedere è " . $movie2->title . ", prodotto nel " . $mo
 
 <body>
     <div class="container py-5 text-center">
-        <h3>Film nella lista "da vedere ma quando non lo so"</h3>
-        <div class="row">
+        <h3 class="mb-3 text-primary">Film nella lista "da vedere ma quando non lo so"</h3>
+        <div class="row row-cols-2 g-4">
             <div class="col">
                 <div class="card text-center">
                     <?php
@@ -62,8 +82,11 @@ echo "il film in lista da vedere è " . $movie2->title . ", prodotto nel " . $mo
                         <div>Nelle sale dal: <?php echo $movie1->year ?></div>
                         <div>Diretto da: <?php echo $movie1->author ?></div>
                         <div class="my-3"><strong>Info generiche:</strong>
-                            <ul>
+                            <ul class="list-unstyled">
                                 <li>Uscito da ormai <?php echo $movie1->getGapYear() ?> anni</li>
+                                <li>Genere: <?php echo $movie1->genre ?></li>
+                                <li>Attore protagonista: <?php echo $movie1->maleProt ?></li>
+                                <li>Attrice protagonista: <?php echo $movie1->femaleProt ?></li>
                             </ul>
                         </div>
                     </div>
@@ -81,8 +104,55 @@ echo "il film in lista da vedere è " . $movie2->title . ", prodotto nel " . $mo
                         <div>Nelle sale dal: <?php echo $movie2->year ?></div>
                         <div>Diretto da: <?php echo $movie2->author ?></div>
                         <div class="my-3"><strong>Info generiche:</strong>
-                            <ul>
-                            <li>Uscito da ormai <?php echo $movie2->getGapYear() ?> anni</li>
+                            <ul class="list-unstyled">
+                                <li>Uscito da ormai <?php echo $movie2->getGapYear() ?> anni</li>
+                                <li>Genere: <?php echo $movie2->genre ?></li>
+                                <li>Attore protagonista: <?php echo $movie2->maleProt ?></li>
+                                <li>Attrice protagonista: <?php echo $movie2->femaleProt ?></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <?php ?>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card text-center">
+                    <?php
+                    ?>
+                    <div class="card-title">
+                        <h4>Titolo: <?php echo $movie3->title ?> </h4>
+                    </div>
+                    <div class="card-body">
+                        <div>Nelle sale dal: <?php echo $movie3->year ?></div>
+                        <div>Diretto da: <?php echo $movie3->author ?></div>
+                        <div class="my-3"><strong>Info generiche:</strong>
+                            <ul class="list-unstyled">
+                                <li>Uscito da ormai <?php echo $movie3->getGapYear() ?> anni</li>
+                                <li>Genere: <?php echo $movie3->genre ?></li>
+                                <li>Attore protagonista: <?php echo $movie3->maleProt ?></li>
+                                <li>Attrice protagonista: <?php echo $movie3->femaleProt ?></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <?php ?>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card text-center">
+                    <?php
+                    ?>
+                    <div class="card-title">
+                        <h4>Titolo: <?php echo $movie4->title ?> </h4>
+                    </div>
+                    <div class="card-body">
+                        <div>Nelle sale dal: <?php echo $movie4->year ?></div>
+                        <div>Diretto da: <?php echo $movie4->author ?></div>
+                        <div class="my-3"><strong>Info generiche:</strong>
+                            <ul class="list-unstyled">
+                                <li>Uscito da ormai <?php echo $movie4->getGapYear() ?> anni</li>
+                                <li>Genere: <?php echo $movie4->genre ?></li>
+                                <li>Attore protagonista: <?php echo $movie4->maleProt ?></li>
+                                <li>Attrice protagonista: <?php echo $movie4->femaleProt ?></li>
                             </ul>
                         </div>
                     </div>
